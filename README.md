@@ -38,39 +38,6 @@ A complete inventory management system for PC component stores, built with Pytho
      - CPUs: `Ryzen 5600X` or `Core i5-12400K`
      - GPUs: `RTX 3060` or `RX 6800 XT`
 
-Real-Life Use Cases
-Retail Store Management
-
-Track inventory levels in real-time
-
-Process customer purchases
-
-Maintain component database
-
-Warehouse Operations
-
-Monitor stock levels across multiple locations
-
-Generate restocking reports
-
-Track component movements
-
-E-commerce Backend
-
-Integrate with online storefronts
-
-Prevent overselling with real-time inventory checks
-
-Automate inventory updates
-
-System Builder Tools
-
-Check component availability
-
-Suggest compatible alternatives
-
-Estimate build costs
-
 ### Data Flow
 
 ```mermaid
