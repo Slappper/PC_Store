@@ -2,6 +2,8 @@ import os
 import re
 from file_handler import InventoryFileHandler, color_deco, COLORS
 
+#A program that helps manage a computer store's stock of CPUs and GPUs. Let's do functions (1-6)
+
 # Main class for the PC Store Inventory System
 class PCStore:
     def __init__(self, inventory_file="inventory.txt"):
@@ -11,14 +13,14 @@ class PCStore:
 
     @staticmethod
     def validate_cpu(cpu: str):
-        # Validate CPU name format (Ryzen or Core)
+        # Validattion rules CPU name format (Ryzen or Core)
         ryzen_pattern = r"^Ryzen \d{4}X$"
         intel_pattern = r"^Core i[3579]-\d{4,5}([kfst])?$"  # Accepts 4 or 5 digits, [kfst] optional
         return re.match(ryzen_pattern, cpu) or re.match(intel_pattern, cpu)
 
     @staticmethod
     def validate_gpu(gpu: str):
-        # Validate GPU name format (Nvidia or AMD)
+        # Same Validation for GPU name format (Nvidia or AMD)
         nvidia_pattern = r"^(RTX|GTX) \d{4}$"
         amd_pattern = r"^RX \d{4} XT$"
         return re.match(nvidia_pattern, gpu) or re.match(amd_pattern, gpu)
