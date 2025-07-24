@@ -1,0 +1,13 @@
+# Ignore all files
+*
+
+# Aber NICHT ignorieren:
+!.gitignore
+!test_pc_store.py
+
+# Optional: Ignoriere typische temporäre Dateien
+__pycache__/
+*.pyc
+*.pyo
+*.tmp
+*.log
