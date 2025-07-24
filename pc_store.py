@@ -19,21 +19,21 @@ class PCStore:
         return re.match(ryzen_pattern, cpu) or re.match(intel_pattern, cpu)
 
     @staticmethod
-    def validate_gpu(gpu: str):
+    def validate_gpu(gpu: str):                 
         # Same Validation for GPU name format (Nvidia or AMD)
         nvidia_pattern = r"^(RTX|GTX) \d{4}$"
         amd_pattern = r"^RX \d{4} XT$"
         return re.match(nvidia_pattern, gpu) or re.match(amd_pattern, gpu)
 
-    def display_cpus(self):
+    def display_cpus(self):                   #1
         # Return list of CPUs in inventory
         return [cpu for cpu in self.inventory if cpu.startswith("Ryzen") or cpu.startswith("Core")]
 
-    def display_gpus(self):
+    def display_gpus(self):                   #2
         # Return list of GPUs in inventory
         return [gpu for gpu in self.inventory if gpu.startswith("RTX") or gpu.startswith("RX")]
 
-    def add_component(self, component_type: str):
+    def add_component(self, component_type: str):       #3
         # Add a new CPU or GPU component with user input for name and amount
         if component_type.lower() == "cpu":
             while True:
@@ -64,7 +64,7 @@ class PCStore:
                 else:
                     print("Invalid GPU format. Examples: 'RTX 3060', 'RX 6800 XT'")
 
-    def sell_component(self, component: str):
+    def sell_component(self, component: str):             #4
         # Sell one or more units of a component if available
         if component in self.inventory:
             while True:
@@ -86,7 +86,7 @@ class PCStore:
                 print(f"- {item} (Stock: {self.inventory[item]})")
             return "Component not found. Please check the list above."
 
-    @color_deco("yellow")
+    @color_deco("yellow")            #color coding for unkown component
     def check_quantity(self, component: str):
         # Return the quantity of a component, colored output
         return self.inventory.get(component, "Component not found")
@@ -95,8 +95,8 @@ class PCStore:
         # Save inventory back to file
         self.file_handler.save()
 
-    def run(self):
-        # Main loop for user interaction
+    def run(self):           #The actual loop you get when you run
+        # Main loop for user interaction 
         while True:
             print("\n" + "="*40)
             print(COLORS['green'] + "PC Component Store Inventory System" + COLORS['reset'])
