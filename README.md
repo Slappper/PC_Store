@@ -7,7 +7,7 @@
 ![OOP](https://img.shields.io/badge/OOP-Implemented-yellowgreen.svg)
 
 A complete inventory management system for PC component stores, built with Python using object-oriented principles.
-
+Don't forget to install pytest (pip install pytest) before running it with - pytest test_pc_store.py -v
 ## Features
 
 - **Inventory Management**: Track CPUs, GPUs, and other components
